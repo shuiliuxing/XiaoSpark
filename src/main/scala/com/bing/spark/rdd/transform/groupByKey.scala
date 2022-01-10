@@ -11,7 +11,6 @@ object groupByKey {
     groupByKey1(sc)
   }
 
-  //简单1
   def groupByKey1(sc:SparkContext):Unit={
     val rdd1=sc.parallelize(Array((100,"spark"), (100,"hudi"), (90,"hadoop"), (80,"kafka")))
     val rdd2=rdd1.groupByKey()

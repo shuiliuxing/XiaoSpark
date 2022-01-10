@@ -10,8 +10,7 @@ object distinct {
 
     distinct1(sc)
   }
-
-  //简单1
+  
   def distinct1(sc:SparkContext):Unit={
     val rdd=sc.parallelize(Array(1,1,2,2,3,3),3)
     val rdd1=rdd.distinct().collect()

@@ -8,7 +8,7 @@ object mysqlConnect {
   def main(args: Array[String]): Unit = {
     val sp=SparkSession.builder().appName("connectTest").master("local").getOrCreate()
 
-    mysqlRead2(sp)
+    mysqlRead(sp)
   }
 
   def mysqlRead(sp:SparkSession):Unit={
@@ -19,7 +19,7 @@ object mysqlConnect {
                   .option("user", "root")
                   .option("password", "")
                 .load()
-    df.show(5)
+    df.select("id","name").show(5)
   }
 
   def mysqlWrite(sp:SparkSession):Unit={

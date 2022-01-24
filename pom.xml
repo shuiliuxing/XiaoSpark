@@ -13,6 +13,7 @@
       <hadoop.version>2.9.0</hadoop.version> <!--hadoop 2.9.0-->
       <scala.version>2.11.12</scala.version> <!--Scala 2.11.12-->
       <spark.version>2.4.6</spark.version>   <!--Spark 2.3.3-->
+      <mysql.version>5.1.47</mysql.version>
   </properties>
 
   <dependencies>
@@ -36,6 +37,12 @@
       <artifactId>spark-hive_2.11</artifactId>
       <version>${spark.version}</version>
 <!--      <scope>provided</scope>-->
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.version}</version>
     </dependency>
 
   </dependencies>

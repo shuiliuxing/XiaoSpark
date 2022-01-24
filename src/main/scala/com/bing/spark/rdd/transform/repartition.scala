@@ -12,8 +12,11 @@ object repartition {
   }
 
   def repartition1(sc:SparkContext):Unit={
-    val rdd=sc.parallelize(Array(1,1,2,2,3,3),3)
-    val rdd1=rdd.distinct().collect()
+    val rdd1=sc.makeRDD(1 to 16, 4)
     rdd1.foreach(println)
+    println("第1个分区是："+rdd1.getNumPartitions)
+    val rdd2=rdd1.repartition(3)
+    rdd2.foreach(println)
+    println("第2个分区是："+rdd2.getNumPartitions)
   }
 }

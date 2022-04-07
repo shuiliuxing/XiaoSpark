@@ -18,7 +18,13 @@ object HiveOperate {
   }
 
   def hiveRead(sp:SparkSession):Unit={
-    val df=sp.sql("select * from test.t_people limit 10")
+    val sqlStr=s"""
+         |select *
+         |from test.t_people
+         |limit 10
+       """.stripMargin
+
+    val df=sp.sql(sqlStr)
     df.show()
   }
 }
